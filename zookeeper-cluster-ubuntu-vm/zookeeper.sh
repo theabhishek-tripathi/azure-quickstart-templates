@@ -12,7 +12,7 @@ chmod a+x /usr/bin/javaws
 
 cd /usr/local
 
-wget "http://mirrors.ukfast.co.uk/sites/ftp.apache.org/zookeeper/stable/zookeeper-3.4.8.tar.gz"
+wget "https://archive.apache.org/dist/zookeeper/zookeeper-3.4.8/zookeeper-3.4.8.tar.gz"
 tar -xvf "zookeeper-3.4.8.tar.gz"
 
 touch zookeeper-3.4.8/conf/zoo.cfg
