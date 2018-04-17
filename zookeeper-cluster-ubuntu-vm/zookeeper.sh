@@ -22,11 +22,13 @@ echo "dataDir=/var/lib/zookeeper" >> zookeeper-3.4.8/conf/zoo.cfg
 echo "clientPort=2181" >> zookeeper-3.4.8/conf/zoo.cfg
 echo "initLimit=5" >> zookeeper-3.4.8/conf/zoo.cfg
 echo "syncLimit=2" >> zookeeper-3.4.8/conf/zoo.cfg
- 
-i=1
-while [ $i -le $2 ]
+
+ADRR=(${2//,/ })
+echo $ADRR
+i=0
+while [ $i -lt ${#ADRR[@]} ]
 do
-    echo "server.$i=10.0.0.$(($i+3)):2888:3888" >> zookeeper-3.4.8/conf/zoo.cfg
+    echo "server.$(($i+1))=${ADRR[$i]}:2888:3888" >> zookeeper-3.4.8/conf/zoo.cfg
     i=$(($i+1))
 done
 
